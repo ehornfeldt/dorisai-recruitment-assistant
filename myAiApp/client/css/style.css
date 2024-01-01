@@ -1,0 +1,262 @@
+:root {
+    --background-color: #fcfcfc;
+    --primary-color: #1579CB;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--background-color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+
+.content {
+    display: contents;
+    padding: 20px 20px 0 20px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.header {
+    flex: 0 1 auto;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+}
+.header h2 {
+    margin: 10px 0;
+    font-size: 16px;
+}
+.home {
+    align-self: center;
+    padding-left: 10px;
+    width: 31px;
+}
+.menu-header {
+    display: flex;
+    justify-content: center;
+}
+.beta {
+    margin: 5px 10px;
+    background-color: #f1667e;
+    padding: 5px 7px;
+    border-radius: 100px;
+}
+
+.message-container {
+    flex: 1 1 auto;
+    margin: 55px auto 15px auto;
+    border-radius: 3px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.messages {
+    overflow-y: auto;
+}
+.doris-container, .user-container {
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    box-sizing: border-box;
+}
+.doris-container {
+    justify-content: flex-start;
+}
+.user-container {
+    justify-content: flex-end;
+}
+.doris, .user {
+    max-width: 45%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin: 0;
+}
+.doris-message, .user-message {
+    display: flex;
+    width: 100%;
+}
+.doris-message {
+    flex-direction: column;
+}
+.user-message {
+    justify-content: flex-end;
+}
+
+.user-message button {
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+    background-color: #ffffff;
+    width: 60px;
+    color: var(----primary-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+.doris {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-bottom-left-radius: 2px;
+    line-height: 1.4;
+}
+.name {
+    font-size: 10px;
+    color: #282828;
+    margin: 0 0 2px 10px;
+}
+.user {
+    background-color: #c9c9c9;
+    color: #000;
+    border-bottom-right-radius: 2px;
+}
+
+.doris-img {
+    width: 40px;
+    height: 40px;
+    align-self: self-end;
+
+}
+.input-container {
+    width: 100%;
+}
+.input-container button {
+    width: 10%;
+    border: 1px solid #dddddd;
+    border-left: none;
+    background-color: white;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0 0 3px 0;
+}
+input {
+    width: 90%;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+    border-right: none;
+    border-radius: 0 0 0 3px;
+    padding-left: 15px;
+}
+input:focus-visible {
+    outline: none;
+}
+
+#myForm {
+    display: flex;
+}
+
+
+/* WAVE */
+.hidden {
+    display: none;
+}
+.wave {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    height: 100%;
+    padding-top: 34px;
+  }
+  
+  .dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #3498db;
+    border-radius: 50%;
+    animation: waveAnimation 1.5s infinite;
+  }
+  
+  .dot:nth-child(1) {
+    left: 5px;
+    animation-delay: 0.2s;
+  }
+  
+  .dot:nth-child(2) {
+    left: 13px;
+    animation-delay: 0.4s;
+  }
+  
+  .dot:nth-child(3) {
+    left: 21px;
+    animation-delay: 0.6s;
+  }
+  
+  .dot:nth-child(4) {
+    left: 29px;
+    animation-delay: 0.8s;
+  }
+  
+  @keyframes waveAnimation {
+    0%, 40%, 100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-7px);
+    }
+  }
+
+#messages::-webkit-scrollbar {
+    width: 10px;
+}
+
+#messages::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #f2f2f5;
+    border: 1px solid #eaeaea;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--primary-color);
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 480px) {
+    .header h2 {
+        font-size: 30px;
+    }
+    .beta {
+        font-size: 30px;
+    }
+    
+    .message-container {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        margin: auto;
+    }
+
+    .doris, .user{
+        font-size: 17px;
+    }
+    .name {
+        font-size: 13px;
+    }
+
+}

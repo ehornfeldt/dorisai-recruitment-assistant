@@ -2,6 +2,7 @@ var express = require('express');
 const cors = require('cors');
 const runAi = require('./gpt.js');
 var app = express();
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -15,13 +16,12 @@ app.post('/api/submit', async (req, res) => {
     // Send answer back to client
     res.json({ message: answer });
   } catch (error) {
-    console.error('Ett fel uppstod:', error);
     res.status(500).json({ error: 'Something went wrong' }); //Bad error message! 
   }
 });
 
 //Listen to port 3000
-app.listen(3000, function () {
-  console.log('Server lyssnar på port 3000!');
+app.listen(port, function () {
+  console.log('Server is up and running!');
 });
 

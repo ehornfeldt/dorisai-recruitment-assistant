@@ -178,7 +178,7 @@ function run() {
   afterSubmit()
 
   try {
-    const response = await fetch('http://localhost:3000/api/submit', {
+    const response = await fetch('https://doris-project.vercel.app/api/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -37,7 +37,7 @@ async function getResponse(info, question) {
 //Get info file
 async function getInfo() {
   try {
-    const data = await fs.readFile('./aboutMe.txt', { encoding: 'utf8' });
+    const data = await fs.readFile('aboutMe.txt', { encoding: 'utf8' });
     return data
   } catch (err) {
     console.log(err);

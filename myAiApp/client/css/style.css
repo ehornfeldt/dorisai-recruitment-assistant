@@ -1,6 +1,7 @@
 :root {
     --background-color: #fcfcfc;
     --primary-color: #1579CB;
+    --secondary-color: #063A64;
 }
 
 html, body {
@@ -31,7 +32,7 @@ html, body {
     width: 100%;
     height: 40px;
     text-align: center;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -110,7 +111,7 @@ html, body {
     border: 2px solid var(--primary-color);
     background-color: #ffffff;
     width: 60px;
-    color: var(----primary-color);
+    color: var(--primary-color);
     font-weight: 600;
     cursor: pointer;
 }
@@ -244,10 +245,8 @@ input:focus-visible {
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (max-device-width : 480px) {
-
     .header {
         height: 140px;
-        border-bottom: 6px solid var(--background-color);
     }
 
     .home {
@@ -255,6 +254,9 @@ input:focus-visible {
         padding-left: 20px;
     }
 
+    .emptydiv {
+        width: 110px;;
+    }
 
     .header h2 {
         font-size: 50px;
@@ -282,6 +284,14 @@ input:focus-visible {
         height: 100px;
     }
 
+    .user-message button {
+        margin-left: 30px;
+        padding: 15px;
+        width: 180px;
+        font-size: 42px;
+        border: 4px solid var(--primary-color);
+    }
+
     .doris, .user{
         max-width: 80%;
         font-size: 42px;
@@ -300,6 +310,10 @@ input:focus-visible {
     .name {
         font-size: 30px;
         margin: 0 0 10px 30px;
+    }
+
+    .input-container {
+        border-top: 1px solid var(--secondary-color);
     }
 
     .input-container button {

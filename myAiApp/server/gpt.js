@@ -1,4 +1,5 @@
 const { OpenAI } = require("openai");
+const info = require('./info.js');
 
 const openai = new OpenAI();
 const fs = require('node:fs/promises');
@@ -39,7 +40,7 @@ async function getInfo() {
   try {
     const file = await fs.readFile(process.cwd() + '/aboutMe.json', 'utf8'); //process.cwd() added to work in vercel
     const data = JSON.parse(file);
-    return data.info
+    return DataTransfer.info
   } catch (err) {
     console.log(err);
   }
@@ -47,7 +48,7 @@ async function getInfo() {
 
 //Run ai application
 const runAi = async(question) => {
-  const info = await getInfo()
+  //const info = await getInfo()
   const answer = await getResponse(info, question)
   return answer
 }

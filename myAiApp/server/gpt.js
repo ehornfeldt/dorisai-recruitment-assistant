@@ -37,8 +37,9 @@ async function getResponse(info, question) {
 //Get info file
 async function getInfo() {
   try {
-    const data = await fs.readFile(process.cwd() + 'aboutMe.txt', { encoding: 'utf8' }); //process.cwd() added to work in vercel
-    return data
+    const file = await fs.readFile(process.cwd() + '/aboutMe.json', 'utf8'); //process.cwd() added to work in vercel
+    const data = JSON.parse(file);
+    return data.info
   } catch (err) {
     console.log(err);
   }

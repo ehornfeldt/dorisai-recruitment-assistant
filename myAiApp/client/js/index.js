@@ -7,7 +7,7 @@
   - createUserMessage: Creates the message from the user input.
   - createMessage: Creates the answer message from Doris.
   - addYesOrNo: Creates yes/no buttoms for user to interact with Doris.
-  - offerContact: Creation of messege where user can get Elins emailaddress 
+  - offerContact: Creation of messege where user can get Johns emailaddress 
   - run: Start, make actions of the user input.
 */
 
@@ -121,7 +121,7 @@ function addYesOrNo() {
   yes.innerText = 'YES'
   no.innerText = 'NO'
   yes.addEventListener('click', function (event) {
-    const text2 = "Here you go, elinreckermann@gmail.com"
+    const text2 = "Here you go, mail@gmail.com"
     createSkelaton()
     scrollToBottom()
     createMessage(text2)
@@ -144,10 +144,10 @@ function addYesOrNo() {
 
 /**
 * @function offerContact
-* @description Creation of messege where user can get Elins emailaddress
+* @description Creation of messege where user can get Johns emailaddress
 */
 function offerContact() {
-  const text = "I see that you are interested in Elin, that's great! Would you like to have her email for further contact?"
+  const text = "I see that you are interested in John, that's great! Would you like to have his email for further contact?"
   createSkelaton()
   scrollToBottom()
   setTimeout(() => {
@@ -178,7 +178,7 @@ function run() {
   afterSubmit()
 
   try {
-    const response = await fetch('https://doris-project.vercel.app/api/submit', {
+    const response = await fetch('http://localhost:3000/api/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

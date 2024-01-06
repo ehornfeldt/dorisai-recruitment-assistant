@@ -1,0 +1,20 @@
+Name: John
+Born: 2001-01-01
+Lives: City
+
+Languages: 
+Contact: 
+
+Hobbies: 
+
+Achivements: 
+
+Education: 
+
+Work experiences: 
+
+Programming knowledge:
+Design tools: 
+
+
+

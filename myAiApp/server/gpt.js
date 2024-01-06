@@ -1,5 +1,4 @@
 const { OpenAI } = require("openai");
-const info = require('./info.js');
 
 const openai = new OpenAI();
 const fs = require('node:fs/promises');
@@ -26,10 +25,10 @@ async function getResponse(info, question) {
     model: "gpt-3.5-turbo",
     max_tokens: 300,
     temperature: 0.7,
-    messages: [{role: "user", content: `Your name is Doris and you are Elins personal recruitment assistant. 
+    messages: [{role: "user", content: `Your name is Doris and you are JOhns personal recruitment assistant. 
       Aswer the question: "${question}" based on this: "${info}". Answer short and 
-      concise and like you are a friend of Elin. If you don't know the answer, answer that you regretfully don't know but that the person 
-      gladly can ask Elin personally in an potentially interview.`}] // Svara som om du känner Elin och att frågan ställs av en rekryterare"
+      concise and like you are a friend of John. If you don't know the answer, answer that you regretfully don't know but that the person 
+      gladly can ask John personally in an potentially interview.`}]
   });
 
   return completion.choices[0].message.content
@@ -38,9 +37,8 @@ async function getResponse(info, question) {
 //Get info file
 async function getInfo() {
   try {
-    const file = await fs.readFile(process.cwd() + '/aboutMe.json', 'utf8'); //process.cwd() added to work in vercel
-    const data = JSON.parse(file);
-    return DataTransfer.info
+    const data = await fs.readFile('/aboutMe.txt', 'utf8'); //process.cwd() added to work in vercel
+    return data
   } catch (err) {
     console.log(err);
   }
@@ -48,7 +46,7 @@ async function getInfo() {
 
 //Run ai application
 const runAi = async(question) => {
-  //const info = await getInfo()
+  const info = await getInfo()
   const answer = await getResponse(info, question)
   return answer
 }

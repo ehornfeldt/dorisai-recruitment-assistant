@@ -190,7 +190,7 @@ function run() {
     createMessage(answer.message, 'doris')
     scrollToBottom()
     dorisMessageCount++
-    if(dorisMessageCount === 6) {
+    if(dorisMessageCount === 3) {
       offerContact()
     }
   } catch (error) {

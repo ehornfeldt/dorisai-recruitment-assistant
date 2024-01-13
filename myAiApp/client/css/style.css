@@ -1,11 +1,12 @@
 :root {
-    --background-color: #fcfcfc;
+    --background-color: #f4faff;
     --primary-color: #1579CB;
     --secondary-color: #063A64;
+    --font: 'Poppins', sans-serif;
 }
 
 html, body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font);
     background: var(--background-color);
     margin: 0;
     padding: 0;
@@ -32,7 +33,7 @@ html, body {
     width: 100%;
     height: 40px;
     text-align: center;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -120,6 +121,7 @@ html, body {
     color: #fff;
     border-bottom-left-radius: 2px;
     line-height: 1.2;
+    width: fit-content;
 }
 .name {
     font-size: 10px;
@@ -145,27 +147,30 @@ html, body {
     width: 10%;
     border: 1px solid #dddddd;
     border-left: none;
-    background-color: white;
-    height: 35px;
+    background-color: var(--background-color);
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     border-radius: 0 0 3px 0;
+    padding-right: 15px;
 }
 
 .input-container button img {
-    width: 20px;
+    width: 25px;
 }
 
 input {
     width: 90%;
-    height: 35px;
+    height: 40px;
     box-sizing: border-box;
     border: 1px solid #dddddd;
     border-right: none;
     border-radius: 0 0 0 3px;
     padding-left: 15px;
+    background-color: var(--background-color);
+    font-family: var(--font);
 }
 input:focus-visible {
     outline: none;
@@ -246,23 +251,11 @@ input:focus-visible {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (max-device-width : 480px) {
     .header {
-        height: 140px;
-    }
-
-    .home {
-        width: 80px;
-        padding-left: 20px;
+        border-bottom: 2px solid var(--background-color);
     }
 
     .emptydiv {
-        width: 110px;;
-    }
-
-    .header h2 {
-        font-size: 50px;
-    }
-    .beta {
-        font-size: 50px;
+        width: 40px;;
     }
     
     .message-container {
@@ -271,90 +264,28 @@ input:focus-visible {
         box-shadow: none;
         margin: auto;
     }
-     .messages { 
-        padding: 10px 40px;
-     }
-
-     .doris-container, .user-container {
-        padding: 40px 10px;
-     }
-
-    .doris-img {
-        width: 100px;
-        height: 100px;
-    }
 
     .user-message button {
-        margin-left: 30px;
-        padding: 15px;
-        width: 180px;
-        font-size: 42px;
-        border: 4px solid var(--primary-color);
+        padding: 12px;
+        width: 80px;
+        font-size: 16px;
     }
 
     .doris, .user{
         max-width: 80%;
-        font-size: 42px;
-        padding: 30px;  
-        border-radius: 20px;
-    }
-
-    .doris {
-        border-bottom-left-radius: 2px;
-    }
-
-    .user {
-        border-bottom-right-radius: 2px;
-    }
-
-    .name {
-        font-size: 30px;
-        margin: 0 0 10px 30px;
     }
 
     .input-container {
-        border-top: 1px solid var(--secondary-color);
+        border-top: 1px solid #b3b5b7;
+        height: 45px;
     }
 
-    .input-container button {
-        width: 20%;
-        height: 140px;
+    input, .input-container button  {
+        height: 45px;
     }
 
     .input-container button img {
-        width: 80px;
-        padding-left: 20px;
+        width: 30px;
+        margin-right: 18px;
     }
-    input {
-        width: 80%;
-        height: 140px;
-        font-size: 42px;
-        padding-left: 30px;
-    }
-
-    .wave {
-        padding-top: 85px;
-    }
-
-    .dot {
-        width: 15px;
-        height: 15px;
-    }
-
-    .dot:nth-child(1) {
-        left: 10px;
-      }
-      
-      .dot:nth-child(2) {
-        left: 32px;
-      }
-      
-      .dot:nth-child(3) {
-        left: 54px;
-      }
-      
-      .dot:nth-child(4) {
-        left: 76px;
-      }
-
 }
